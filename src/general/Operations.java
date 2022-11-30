@@ -161,7 +161,7 @@ public class Operations {
 
     }
 
-    public double[][] Scalar(double[][] matrix, int i) {
+    public double[][] Scalar(double[][] matrix, double i) {
         
         double[][] result = new double[matrix.length][matrix[0].length];
         for (int j = 0; j < matrix.length; j++) {
@@ -172,6 +172,20 @@ public class Operations {
         return result;
 
     
+    }
+
+    public double[][] Power(double[][] matrix, int i) {
+
+
+        double[][] result = new double[matrix.length][matrix[0].length];
+        for (int j = 0; j < matrix.length; j++) {
+            for (int k = 0; k < matrix[0].length; k++) {
+                result[j][k] = Math.pow(matrix[j][k], i);
+            }
+        }
+        return result;
+
+
     }
 
 
