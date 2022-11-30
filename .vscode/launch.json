@@ -5,7 +5,7 @@
             "name": "JADE",
             "request": "launch",
             "mainClass": "jade.Boot",
-            "args": "-gui Agente:handson5.agents.MLR"
+            "args": "-gui Agente:handson4.agents.SLR"
         }
     ]
 }

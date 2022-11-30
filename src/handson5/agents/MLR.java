@@ -71,8 +71,6 @@ public class MLR extends Agent{
                 double[][] Y = op.Product(X, Result);
 
                 System.out.println("El valor de Y es: " + Y[0][0]);
-                
-                
             }
         }
 
