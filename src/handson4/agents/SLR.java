@@ -2,7 +2,6 @@ package handson4.agents;
 import jade.core.Agent;
 import jade.core.behaviours.OneShotBehaviour;
 
-import java.util.Scanner;
 import general.Dataset;
 
 public class SLR extends Agent{
@@ -25,12 +24,6 @@ public class SLR extends Agent{
             System.out.println("Iniciando calculos de matrices [SLR]");
             System.out.println("Independiente [0], dependiente [3]");
 
-            int inputdata;
-            try (Scanner in = new Scanner(System.in)) {
-                inputdata = in.nextInt();
-            }
-
-            //dat.datos(inputdata);
         }
 
         @Override

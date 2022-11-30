@@ -13,6 +13,17 @@ public class Dataset {
     }
 
     public double[][] getData(){
+        if(this.type == "h0"){
+            double b0[] = {1.0,2.0,3.0,4.0,5.0,6.0,7.0,8.0,9.0,10.0};
+            double b1[] = {4.0,5.0,6.0,7.0,8.0,9.0,10.0,11.0,12.0,13.0};
+            double b2[] = {7.0,8.0,9.0,10.0,11.0,12.0,13.0,14.0,15.0,16.0};
+
+            double b4[] = {12.0,15.0,18.0,21.0,24.0,27.0,30.0,33.0,36.0,39.0};
+
+            double[][] data = {b0,b1,b2, b4};
+            return data;
+        }
+
         if(this.type == "h3"){
             // return h3 data
 
@@ -29,42 +40,36 @@ public class Dataset {
         }
         return null;
     }
-    
-}
 
-/* public class Dataset {
-    int[][] matrizdatset = new int[9][9];
-    int x[] = {23, 26, 30, 34, 43, 48, 52, 57, 58};
-    int y[] = {651, 762, 856, 1063, 1190, 1298, 1421, 1440, 1518};
+    public double[][] getJoinedDataX(){
+        
+        // join b0,b1,b2 in the next format
+        // {{b0.0, b1.0, b2.0}, {b0.1, b1.1, b2.1}, ...} // without the last value
 
-    public void datos(int valor) {
-        int n=9;
+        double[][] data = this.getData();
+        double[][] joinedData = new double[data[0].length][data.length-1];
 
-        for (int i =0;i<n;i++){
-            for (int j=0;j<2;j++){
-                if (j==0) {
-                    matrizdatset[i][j]=x[i];
-                }
-                else{
-                    matrizdatset[i][j]=y[i];
-                }
+        for(int i = 0; i < data[0].length; i++){
+            for(int j = 0; j < data.length-1; j++){
+                joinedData[i][j] = data[j][i];
             }
         }
-        System.out.printf("x    y\n");
 
-        for (int i = 0; i < n; ++i) {
-            for (int j = 0; j < 2; ++j) {
-                System.out.printf("%d \t", matrizdatset[i][j]);
-            }
-            System.out.printf("\n");
-        }
-        Math p = new Math();
-
-        System.out.printf("\nB0 = %.4f",p.b0(matrizdatset));
-        System.out.printf("\nB1 = %.4f",p.b1(matrizdatset));
-
-        System.out.printf("\nyhat es igual a %.4f",p.yhat(matrizdatset, valor));
+        return joinedData;
     }
-}
 
-*/
+    public double[][] getJoinedDataY(){
+        // join b4 in the next format
+        // {b4.0, b4.1, ...} // ak the last value
+
+        double[][] data = this.getData();
+        double[][] joinedData = new double[data[0].length][1];
+
+        for(int i = 0; i < data[0].length; i++){
+            joinedData[i][0] = data[data.length-1][i];
+        }
+
+        return joinedData;
+    }
+
+}
