@@ -188,5 +188,80 @@ public class Operations {
 
     }
 
+    public Object multiply(double[][] dataX, double a) {
+
+        double[][] result = new double[dataX.length][dataX[0].length];
+        for (int i = 0; i < dataX.length; i++) {
+            for (int j = 0; j < dataX[0].length; j++) {
+                result[i][j] = dataX[i][j] * a;
+            }
+        }
+        return result;
+
+    }
+
+    public double[][] multiply(double[][] dataX, double[][] dataY) {
+
+        double[][] result = new double[dataX.length][dataY[0].length];
+        for (int i = 0; i < dataX.length; i++) {
+            for (int j = 0; j < dataY[0].length; j++) {
+                for (int k = 0; k < dataY.length; k++) {
+                    result[i][j] += dataX[i][k] * dataY[k][j];
+                }
+            }
+        }
+        return result;
+
+    }
+
+    public double[][] add(Object multiply, double b) {
+        return null;
+    }
+
+    public double[][] Join(double[][] dataX, double[][] dataY) {
+            
+            double[][] result = new double[dataX.length][dataX[0].length + dataY[0].length];
+            for (int i = 0; i < dataX.length; i++) {
+                for (int j = 0; j < dataX[0].length; j++) {
+                    result[i][j] = dataX[i][j];
+                }
+            }
+            for (int i = 0; i < dataY.length; i++) {
+                for (int j = 0; j < dataY[0].length; j++) {
+                    result[i][j + dataX[0].length] = dataY[i][j];
+                }
+            }
+            return result;
+    
+    }
+
+    public double[][] Product(double[][] xTransposedX, double[] ds) {
+
+        double[][] result = new double[xTransposedX.length][ds.length];
+        for (int i = 0; i < xTransposedX.length; i++) {
+            for (int j = 0; j < ds.length; j++) {
+                result[i][j] = xTransposedX[i][j] * ds[j];
+            }
+        }
+        return result;
+
+    }
+
+    public static double dotProduct(double[] ds, double[] x) {
+
+        double result = 0;
+        for (int i = 0; i < ds.length; i++) {
+            result += ds[i] * x[i];
+        }
+        return result;
+
+    }
+
+    public static double randomDouble(int i, int j) {
+
+        return Math.random() * (j - i) + i;
+
+    }
+
 
 }
