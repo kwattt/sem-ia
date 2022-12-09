@@ -18,6 +18,7 @@ public class GASLR extends Agent{
             // Initialize the population
             int populationSize = 6; // We will create 6 chromosomes
             int chromosomeSize = 6; // Each chromosome will have 6 genes
+
             int[][] population = new int[populationSize][chromosomeSize];
             int[] fitness = new int[populationSize];
             int[] newFitness = new int[populationSize];
@@ -88,8 +89,6 @@ public class GASLR extends Agent{
             }
 
             System.out.println("The sum of the fittest chromosome is: " + sum);
-
-
         }
 
         private int[] mutate(int[] is) {

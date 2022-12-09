@@ -45,7 +45,7 @@ public class PSO extends Agent{
 
             // xᵢ(t) = posición de la partícula i en el instante t
             // vᵢ(t) = velocidad de la partícula i en el instante t
-            // y(t) = posición de la mejor partícula
+            // y(t) = posición de la mejor partícula  
             // z(t) = posición de la mejor partícula global
             // ω = factor de inercia
             // c1 = constante de aceleración cognitiva

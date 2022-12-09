@@ -5,7 +5,7 @@
             "name": "JADE",
             "request": "launch",
             "mainClass": "jade.Boot",
-            "args": "-gui Agente:handson7.agents.GASLR"
+            "args": "-gui Agente:handson9.agents.PSO"
         }
     ]
 }
